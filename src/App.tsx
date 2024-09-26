@@ -1,17 +1,15 @@
-import { SudokuBox } from './components/SudokuBox/SudokuBox';
+import { SudokuGrid } from './components/SudokuGrid/SudokuGrid';
 
 import styles from './App.module.scss';
 
-function App() {
+export const App: React.FC = () => {
   return (
     <div className={styles.container}>
       <h1>Sudoku Solver</h1>
       <div>
-        <SudokuBox />
+        <SudokuGrid />
         <button>TEST</button>
       </div>
     </div>
   );
-}
-
-export default App;
+};
