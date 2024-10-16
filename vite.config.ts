@@ -12,4 +12,11 @@ export default defineConfig({
     },
     devSourcemap: true,
   },
+  resolve: {
+    alias: {
+      '@components': '/src/components',
+      '@assets': '/src/assets',
+      '@styles': '/src/styles',
+    },
+  },
 });
