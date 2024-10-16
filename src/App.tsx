@@ -1,4 +1,4 @@
-import { SudokuGrid } from './components/SudokuGrid/SudokuGrid';
+import { SudokuGrid } from '@components/SudokuGrid/SudokuGrid';
 
 import styles from './App.module.scss';
 
