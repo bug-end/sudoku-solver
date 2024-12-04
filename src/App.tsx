@@ -8,7 +8,6 @@ export const App: React.FC = () => {
       <h1>Sudoku Solver</h1>
       <div>
         <SudokuGrid />
-        <button>TEST</button>
       </div>
     </div>
   );
