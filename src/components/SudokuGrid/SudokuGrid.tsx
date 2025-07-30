@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { SudokuInput } from '@components/SudokuInput/SudokuInput';
 
 import styles from './SudokuGrid.module.scss';
@@ -15,18 +17,27 @@ const initialState = [
 ];
 
 export const SudokuGrid: React.FC = () => {
-  console.log('initialState', initialState);
+  const [sudokuGrid, setSudokuGrid] = useState(initialState);
+  console.log('sudokuGrid', sudokuGrid);
+
+  const handleChange = () => {
+    // TODO: add logic + validation
+  };
+
   return (
     <div className={styles.wrapper}>
-      {initialState.map((row, rowIndex) => (
-        <ol key={rowIndex} className={styles.row}>
-          {row.map((cell, cellIndex) => (
-            <li key={cellIndex} className={styles.cell}>
-              <SudokuInput value={cell || `${rowIndex},${cellIndex}`} onChange={() => {}} />
-            </li>
-          ))}
-        </ol>
-      ))}
+      {sudokuGrid.map((row, rowIndex) =>
+        row.map((cell, cellIndex) => (
+          <SudokuInput
+            key={`cell-${rowIndex}-${cellIndex}`}
+            id={`cell-${rowIndex}-${cellIndex}`}
+            data-row={rowIndex}
+            data-cell={cellIndex}
+            value={cell}
+            onChange={handleChange}
+          />
+        )),
+      )}
     </div>
   );
 };

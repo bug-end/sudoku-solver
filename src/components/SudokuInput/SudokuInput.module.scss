@@ -2,4 +2,40 @@
   width: 100%;
   height: 100%;
   text-align: center;
+  border: 1px solid #000;
+  aspect-ratio: 1/1;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.input[data-row='2'],
+.input[data-row='5'],
+.input[data-row='8'] {
+  border-bottom: 3px solid #000;
+}
+
+.input[data-cell='2'],
+.input[data-cell='5'],
+.input[data-cell='8'] {
+  border-right: 3px solid #000;
+}
+
+.input[data-row='0'] {
+  border-top: 3px solid #000;
+}
+
+.input[data-cell='0'] {
+  border-left: 3px solid #000;
+}
+
+.input:hover {
+  cursor: pointer;
+  background-color: #d0ffef;
+}
+
+.input:focus {
+  cursor: auto;
+  background-color: #7fffd4;
+  outline: none;
 }
