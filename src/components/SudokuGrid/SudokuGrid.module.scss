@@ -1,15 +1,7 @@
 .wrapper {
   margin: 0 auto;
-  max-width: 60%;
-}
-
-.row {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.cell {
-  aspect-ratio: 1/1;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
 }
