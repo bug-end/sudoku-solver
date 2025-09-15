@@ -1,5 +1,5 @@
 export interface SudokuInputProps {
   id: string;
-  value?: string | null;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: number | null;
+  onChange?: (value: number | null) => void;
 }

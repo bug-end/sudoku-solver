@@ -4,7 +4,10 @@ import { SudokuInput } from '@components/SudokuInput/SudokuInput';
 
 import styles from './SudokuGrid.module.scss';
 
-const initialState = [
+type SudokuCell = number | null;
+type SudokuGridType = SudokuCell[][];
+
+const initialState: SudokuGridType = [
   [null, null, null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null, null, null],
@@ -17,11 +20,15 @@ const initialState = [
 ];
 
 export const SudokuGrid: React.FC = () => {
-  const [sudokuGrid, setSudokuGrid] = useState(initialState);
-  console.log('sudokuGrid', sudokuGrid);
+  const [sudokuGrid, setSudokuGrid] = useState<SudokuGridType>(initialState);
+  console.log('sudokuGrid', sudokuGrid); // TODO: remove after development
 
-  const handleChange = () => {
-    // TODO: add logic + validation
+  const handleChange = (value: SudokuCell, rowIndex: number, cellIndex: number) => {
+    setSudokuGrid((prev) =>
+      prev.map((row, rIndex) =>
+        row.map((cell, cIndex) => (rIndex === rowIndex && cIndex === cellIndex ? value : cell)),
+      ),
+    );
   };
 
   return (
@@ -34,7 +41,7 @@ export const SudokuGrid: React.FC = () => {
             data-row={rowIndex}
             data-cell={cellIndex}
             value={cell}
-            onChange={handleChange}
+            onChange={(value) => handleChange(value, rowIndex, cellIndex)}
           />
         )),
       )}
